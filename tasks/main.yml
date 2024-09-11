@@ -1,2 +1,12 @@
 ---
 # tasks file for apache
+- name: Installing the httpd package
+  yum:
+    name: httpd
+    update_cache: yes
+    state: present
+- name: Copying source code
+  copy:
+      src: index.html
+      dest: /var/www/html
+
